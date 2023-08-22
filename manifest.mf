@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: jna-5.13.0.jar jna-platform-5.13.0.jar pcap4j-core-1.8.2.jar slf4j-api-1.7.21.jar slf4j-nop-1.7.21.jar
+Main-Class: application.Main
+

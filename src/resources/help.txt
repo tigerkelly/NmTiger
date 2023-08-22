@@ -1,0 +1,25 @@
+The NmTiger program is a network monitoring tool that shows network traffic in
+either Kilobits, Kilobytes, Megabits or Megabytes.
+
+This program only monitors the interface selected and only the traffic destined
+for that interface, so if you want to monitor an interface on another system
+then you need to run this program on that system.
+
+Some features are:
+	- Dynamically change to Kilobits, Kilobytes, Megabits or Megabytes.
+	- Take snapshots of the current chart.
+	- Shows both TCP and UDP packet counts.
+	- Shows packet counts for all packet types, using the 'Stats' button.
+	- Runs on Windows, Linux and Mac OS.
+	
+Selecting an interface starts the network monitoring, use the 'Stop' button to
+stop monitoring.
+
+The 'Stats' button show the current packets counts for all type of packets.
+
+I did not include packet detailing because I think Wireshark does that best.
+
+I hope to find this program useful.
+Please send comments or suggestions to
+rkwiles@twc.com
+

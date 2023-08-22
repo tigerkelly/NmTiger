@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="aPane" xmlns="http://javafx.com/javafx/1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NmTigerController">
+   <children>
+      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" spacing="4.0">
+               <padding>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </padding>
+               <children>
+                  <Button fx:id="btnAbout" mnemonicParsing="false" onAction="#doBtnAbout">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/CuteTiger.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Label text="NmTiger">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <VBox alignment="BOTTOM_LEFT">
+                     <children>
+                        <Label text="1.0.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="4.0">
+               <children>
+                  <MenuBar style="-fx-font-size: 14px;" HBox.hgrow="ALWAYS">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                        	<MenuItem fx:id="mFileSnapshot" mnemonicParsing="false" onAction="#doFileSnapshot" text="SnapShot">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="DOWN" code="S" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator></MenuItem>
+                          <MenuItem fx:id="mFileQuit" mnemonicParsing="false" onAction="#doFileQuit" text="Quit">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="DOWN" code="Q" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator></MenuItem>
+                        </items>
+                      </Menu>
+                        <Menu fx:id="mInterface" mnemonicParsing="false" text="Interface" />
+                        <Menu mnemonicParsing="false" text="Settings">
+                           <items>
+                              <RadioMenuItem mnemonicParsing="false" onAction="#doKilobitsPerSec" text="Kilobits per Second">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="bitToogle" />
+                                 </toggleGroup>
+                              </RadioMenuItem>
+                              <RadioMenuItem mnemonicParsing="false" onAction="#doKilobytesPerSec" text="Kilobytes per Second" toggleGroup="$bitToogle" />
+                              <RadioMenuItem mnemonicParsing="false" onAction="#doBitsPerSec" selected="true" text="Megabits per Second" toggleGroup="$bitToogle" />
+                              <RadioMenuItem mnemonicParsing="false" onAction="#doBytesPerSec" text="Megabytes per Second" toggleGroup="$bitToogle" />
+                           </items>
+                        </Menu>
+                      <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                              <MenuItem fx:id="mHelpHelp" mnemonicParsing="false" onAction="#doHelpHelp" text="Help" />
+                          <MenuItem fx:id="mHelpAbout" mnemonicParsing="false" onAction="#doBtnAbout" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+                  <Button fx:id="btnStop" mnemonicParsing="false" onAction="#doBtnStop" text="Stop">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </padding>
+            </HBox>
+            <HBox fx:id="hbChart" spacing="4.0" VBox.vgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="4.0">
+               <padding>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </padding>
+               <children>
+                  <Label text="TCP:">
+                     <font>
+                        <Font name="SansSerif Regular" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTcpPackets" prefWidth="100.0" style="-fx-border-color: black;">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label text="UDP:">
+                     <font>
+                        <Font name="SansSerif Regular" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblUdpPackets" prefWidth="100.0" style="-fx-border-color: black;">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label text="Other:">
+                     <font>
+                        <Font name="SansSerif Regular" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblOtherPackets" prefWidth="100.0" style="-fx-border-color: black;">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnStats" mnemonicParsing="false" onAction="#doBtnStats" text="Stats">
+                     <font>
+                        <Font name="SansSerif Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
