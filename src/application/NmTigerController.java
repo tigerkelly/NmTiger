@@ -62,6 +62,9 @@ public class NmTigerController implements Initializable {
     private Label lblOtherPackets;
     
     @FXML
+    private Label lblVersion;
+    
+    @FXML
     private HBox hbChart;
     
     @FXML
@@ -172,6 +175,8 @@ public class NmTigerController implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		
+		lblVersion.setText(ng.appVersion);
 		
 		//defining the axes
         CategoryAxis xAxis = new CategoryAxis(); // we are gonna plot against time

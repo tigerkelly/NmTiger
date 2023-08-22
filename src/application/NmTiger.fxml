@@ -41,7 +41,7 @@
                   </Label>
                   <VBox alignment="BOTTOM_LEFT">
                      <children>
-                        <Label text="1.0.0">
+                        <Label fx:id="lblVersion" text="1.0.0">
                            <font>
                               <Font size="16.0" />
                            </font>
