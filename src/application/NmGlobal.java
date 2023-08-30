@@ -33,7 +33,7 @@ public class NmGlobal {
 	}
 	
 	private void initGlobals() {
-		appVersion = "1.0.3";
+		appVersion = "1.0.4";
 		
 		String os = System.getProperty("os.name").toLowerCase();
 		if (os.contains("win") == true) {

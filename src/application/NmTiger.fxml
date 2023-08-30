@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="aPane" xmlns="http://javafx.com/javafx/1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NmTigerController">
+<AnchorPane fx:id="aPane" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NmTigerController">
    <children>
       <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -109,7 +109,7 @@
                <children>
                   <Label text="TCP:">
                      <font>
-                        <Font name="SansSerif Regular" size="15.0" />
+                        <Font name="SansSerif Regular" size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="lblTcpPackets" prefWidth="100.0" style="-fx-border-color: black;">
@@ -119,7 +119,7 @@
                   </Label>
                   <Label text="UDP:">
                      <font>
-                        <Font name="SansSerif Regular" size="15.0" />
+                        <Font name="SansSerif Regular" size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="lblUdpPackets" prefWidth="100.0" style="-fx-border-color: black;">
@@ -127,12 +127,32 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
+                  <Label text="Multicast:">
+                     <font>
+                        <Font name="SansSerif Regular" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblMulticastPackets" prefWidth="100.0" style="-fx-border-color: black;">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
                   <Label text="Other:">
                      <font>
-                        <Font name="SansSerif Regular" size="15.0" />
+                        <Font name="SansSerif Regular" size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="lblOtherPackets" prefWidth="100.0" style="-fx-border-color: black;">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblType" text="Mbps:">
+                     <font>
+                        <Font name="SansSerif Regular" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblPut" prefWidth="100.0" style="-fx-border-color: black;">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>

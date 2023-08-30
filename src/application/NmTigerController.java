@@ -62,7 +62,16 @@ public class NmTigerController implements Initializable {
     private Label lblOtherPackets;
     
     @FXML
+    private Label lblMulticastPackets;
+    
+    @FXML
     private Label lblVersion;
+    
+    @FXML
+    private Label lblType;
+    
+    @FXML
+    private Label lblPut;
     
     @FXML
     private HBox hbChart;
@@ -275,6 +284,9 @@ public class NmTigerController implements Initializable {
 							lblTcpPackets.setText(data.getTcpPackets() + "");
 							lblUdpPackets.setText(data.getUdpPackets() + "");
 							lblOtherPackets.setText(data.getOtherPackets() + "");
+							lblMulticastPackets.setText(data.getMulticastPackets() + "");
+							lblType.setText(data.getType());
+							lblPut.setText(String.format("%.4f", data.getPut()));
 						}
 					});
 				}

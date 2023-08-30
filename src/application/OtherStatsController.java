@@ -31,6 +31,20 @@ public class OtherStatsController implements Initializable {
     	Stage stage = (Stage)aPane.getScene().getWindow();
     	stage.close();
     }
+    
+    @FXML
+    void doBtnRefresh(ActionEvent event) {
+    	ObservableList<String> stats = FXCollections.observableArrayList();
+		
+		for (int i = 0; i < 256; i++) {
+			if (IpNumber.getInstance((byte)i).name().equalsIgnoreCase("unknown") == false) {
+				if (ng.ipNumberStats[i] > 0)
+					stats.add(String.format("%-25.25s %d", IpNumber.getInstance((byte)i).name(), ng.ipNumberStats[i]));
+			}
+		}
+		
+		listView.setItems(stats);
+    }
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -38,8 +52,10 @@ public class OtherStatsController implements Initializable {
 		ObservableList<String> stats = FXCollections.observableArrayList();
 		
 		for (int i = 0; i < 256; i++) {
-			if (IpNumber.getInstance((byte)i).name().equalsIgnoreCase("unknown") == false)
-				stats.add(String.format("%-25.25s %d", IpNumber.getInstance((byte)i).name(), ng.ipNumberStats[i]));
+			if (IpNumber.getInstance((byte)i).name().equalsIgnoreCase("unknown") == false) {
+				if (ng.ipNumberStats[i] > 0)
+					stats.add(String.format("%-25.25s %d", IpNumber.getInstance((byte)i).name(), ng.ipNumberStats[i]));
+			}
 		}
 		
 		listView.setItems(stats);
